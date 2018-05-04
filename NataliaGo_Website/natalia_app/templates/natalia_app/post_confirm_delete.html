@@ -1,0 +1,21 @@
+{% extends 'natalia_app/base.html' %}
+{% block content %}
+
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a>
+</p>
+
+<div class="uk-container-large post-delete-view">
+
+  <form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ object }}?</p>
+    <input type="submit" class="uk-button-small uk-button uk-button-danger" value="Delete">
+  </form>
+
+
+
+</div>
+
+
+{% endblock %}

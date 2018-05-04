@@ -1,0 +1,24 @@
+{% extends "natalia_app/base.html" %}
+{% load static %}
+{% block content %}
+{% block additional_styles %}
+
+<style>
+   html {
+     background: url({% static 'media/typewriter2.jpg' %});
+     background-size: cover;
+     background-repeat:no-repeat;
+   }
+</style>
+
+<div class="uk-container uk-container-large">
+  <h1>About My Site</h1>
+  <p>This is my first Django website that I did on my own!</p>
+
+</div>
+
+{% endblock %}
+
+
+
+{% endblock %}

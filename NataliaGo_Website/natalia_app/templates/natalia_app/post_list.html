@@ -1,0 +1,52 @@
+{% extends 'natalia_app/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  html {
+  background: url({% static 'media/typewriter2.jpg' %});
+  background-size: cover;
+  background-repeat:no-repeat;
+   }
+</style>
+
+<div class="uk-container-large">
+
+{% if user.is_authenticated %}
+  <div class="uk-inline blogpostbutton">
+      <button class="uk-button uk-button-secondary uk-button-small" type="button">New Post</button>
+      <div uk-dropdown>
+          <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-active"><a href="{% url 'post_new' %}">Create New Post</a></li>
+              <li><a href="{% url 'drafts_view' %}">Drafts</a></li>
+              <li class="uk-nav-header">Welcome: {{user.username}}</li>
+              <li><a href="{% url 'logout' %}">Log Out</a></li>
+            </ul>
+        </div>
+
+                {% else %}
+                <p id="loginlink">
+                <a href="{% url 'login' %}"> Login |</a>
+                </p>
+              {% endif %}
+
+  </div>
+
+<p></p>
+
+{% for post in post_list %}
+<div class="post uk-container-large blog-post-list">
+  <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+  <div class="date">
+    <p>Published on: {{post.published_date|date:"D M Y"}}</p>
+  </div>
+  <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>
+  <p></p>
+  <p></p>
+
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

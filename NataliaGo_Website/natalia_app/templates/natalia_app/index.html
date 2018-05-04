@@ -1,0 +1,49 @@
+{% extends "natalia_app/base.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+
+<div class="uk-container uk-container-large">
+
+  <div class="split left">
+  <div class="centered">
+    <div class="index-left-bg uk-container">
+      <a id="writer" class="floatingtext" style="font-size:2vw" href="{% url 'writer' %}"><h3>Writer</h3></a>
+      <a id="actor" href="{% url 'actor' %}"><h3 class="floatingtext" style="font-size:2vw">Actor</h3></a>
+      <h1 id="nataliago" style="font-size:5vw">Natalia Go</h1>
+
+
+      <h3 id="storyteller" class="floatingtext" style="font-size:2vw">Storyteller</h3>
+
+    </div>
+
+
+    </div>
+  </div>
+
+
+<div class="split right">
+  <div class="centered">
+    <div class="right_text">
+
+<div class="index-right-bg">
+  <h2 class="animated_storyteller" style="font-size:3vw">I'm your all around
+    <span
+       class="txt-rotate"
+       data-period="2000"
+       data-rotate='[ "storyteller.", "raconteur." ]'></span>
+  </h2>
+
+</div>
+
+    <p>
+      <button class="uk-button uk-button-secondary" style="font-size:1vw">Enter</button>
+    </p>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+{% endblock %}

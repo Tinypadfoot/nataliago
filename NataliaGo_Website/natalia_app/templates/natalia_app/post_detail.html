@@ -1,0 +1,73 @@
+{% extends 'natalia_app/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  html {
+  background: url({% static 'media/typewriter2.jpg' %});
+  background-size: cover;
+  background-repeat:no-repeat;
+   }
+</style>
+
+{% if post.published_date %}
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a>
+</p>
+{% else %}
+
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a><a id="draftlinks" href="{% url 'drafts_view' %}"> Back to Drafts |</a>
+</p>
+
+{% endif %}
+
+<div class="uk-container-large blog-post-detail">
+
+  <h1 class="posttitle">{{post.title}}</h1>
+  {% if post.published_date %}
+    <div class="date postdate">
+      {{ post.published_date }}
+    </div>
+  {% else %}
+  <a class="uk-button uk-button-secondary uk-button-small" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+  {% endif %}
+
+  <br>
+  <p class="postcontent">{{post.text|safe|linebreaksbr}}</p>
+  <br>
+  {% if user.is_authenticated %}
+    <a class="uk-button uk-button-secondary uk-button-small" href="{% url 'post_edit' pk=post.pk %}">Edit Post</a>
+    <a class="uk-button uk-button-secondary uk-button-small uk-button-danger" href="{% url 'post_confirm_delete' pk=post.pk %}">Delete Post</a>
+  {% endif %}
+
+<hr>
+<a class="uk-button uk-button-secondary uk-button-small" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+<div class="container">
+  {% for comment in post.comments.all %}
+  <br>
+    {% if user.is_authenticated or comment.approved_comment %}
+      {{ comment.created_date }}
+        {% if not comment.approved_comment %}
+        <a class="uk-button uk-button-secondary uk-button-small" href="{% url 'comment_remove' pk=comment.pk %}">Remove</a>
+        <a class="uk-button uk-button-secondary uk-button-small" href="{% url 'comment_approve' pk=comment.pk %}">Approve</a>
+        {% endif %}
+        {% if user.is_authenticated or comment.approved_comment %}
+        <a class="uk-button uk-button-secondary uk-button-danger uk-button-small" href="{% url 'comment_remove' pk=comment.pk %}">Delete</a>
+        {% endif %}
+        <p>{{comment.text|safe|linebreaks}}</p>
+        <p>Posted By: {{ comment.author }}</p>
+
+    {% endif %}
+      {% empty %}
+      <br>
+      <p>No Comments</p>
+
+    {% endfor %}
+</div>
+
+</div>
+
+
+{% endblock %}

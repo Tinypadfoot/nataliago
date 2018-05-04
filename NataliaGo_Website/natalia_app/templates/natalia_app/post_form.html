@@ -1,0 +1,25 @@
+{% extends 'natalia_app/base.html' %}
+{% block content %}
+
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a>
+</p>
+
+<div class="uk-container-large newpost">
+
+
+  <h1>New Post</h1>
+  <form class="post-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="uk-button uk-button-secondary uk-button-small newpostbutton">Save</button>
+  </form>
+
+  <script>var editor = new MediumEditor('.editable');</script>
+
+</div>
+
+
+
+{% endblock %}

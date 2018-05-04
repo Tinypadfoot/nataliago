@@ -1,0 +1,23 @@
+{% extends 'natalia_app/base.html' %}
+{% block content %}
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a>
+</p>
+
+<div class="commentform uk-container-large">
+
+
+  <h3>New Comment</h3>
+  <form class="post-form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p id="commentinst uk-text-primary">Highlight text to add styling.</p>
+    <button type="submit" name="uk-button uk-button-secondary">Post Comment</button>
+  </form>
+
+  <script>var editor = new MediumEditor('.editable');</script>
+
+</div>
+
+
+{% endblock %}

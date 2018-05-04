@@ -1,0 +1,436 @@
+#main {overflow-y: scroll}
+
+/* Split the screen in half */
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  text-overflow: scroll;
+  overflow-wrap: break-word;
+  padding: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background: url(media/typewriter.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background: url(media/natalia.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.right_text{
+  padding-top: 150px;
+  /* padding-bottom: 300px; */
+}
+
+.index-right-bg{
+  background-color: rgba(137,132,135,.50);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.index-left-bg{
+  background-color: rgba(137,132,135,.50);
+  border: solid rgba(137,132,135,.50);
+  border-width: thin;
+  border-radius: 125px;
+}
+/* Index */
+
+.uk-button-secondary{
+  background-color: #3A3032;
+}
+
+#writer{
+  float: left;
+  padding: 5px;
+}
+
+#actor{
+  float: right;
+  padding: 5px;
+}
+
+#storyteller{
+  float: right;
+  padding: 5px;
+}
+
+#nataliago{
+  padding: 50px;
+}
+
+.animated_storyteller{
+  font-family: 'Lato', sans-serif;
+  color: #F9EFF1;
+  text-shadow: 1.5px 1px #3A3032;
+  font-size: 4em;
+}
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.floatingtext:hover{
+  -webkit-animation: swing 1s ease;
+  animation: swing 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* Blog */
+
+.main-nav{
+  padding: 5px;
+}
+
+.blog-nav{
+  padding: 1px;
+  font-size: 3em;
+}
+
+.blogpostbutton{
+  text-align: left;
+  padding-left: 20px;
+}
+
+.blog-post-list{
+  text-align: left;
+  padding-left: 20px;
+  border: solid black 1px;
+  background-color: rgba(137,132,135,.50);
+}
+
+.blog-post-detail{
+  text-align: left;
+  padding-left: 20px;
+  background-color: rgba(137,132,135,.50);
+}
+
+.post-detail-nav{
+  text-align: left;
+  padding-left: 20px;
+}
+
+.commentform{
+  text-align: left;
+  padding-left: 20px;
+  border: solid black 1px;
+}
+
+.post-delete-view{
+  text-align: left;
+  padding-left: 20px;
+}
+
+.newpost{
+  text-align: left;
+  padding-left: 20px;
+  border: solid black 1px;
+}
+
+#commentinst{
+  font-size: .5em;
+}
+
+#bloglink{
+  text-decoration: underline;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#draftlinks{
+  text-decoration: underline;
+  text-align: left;
+}
+
+#loginlink{
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* Pages */
+
+h1, h2, h3{
+  font-family: 'Arimo', sans-serif;
+  color: #F9EFF1;
+  text-shadow: 1.5px 1px #3A3032;
+}
+
+body, p{
+  font-family: 'Lato', sans-serif;
+  color: #F9EFF1;
+}
+
+/* Writer Page */
+
+.writer-page{
+  padding: 20px;
+}
+
+.writerpage-text{
+  padding: 10px;
+  color: #F9EFF1;
+  font-size: 1.5em;
+  word-wrap: break-word;
+}
+
+.writerpage-background{
+  background-color: rgba(137,132,135,.50);
+  padding: 10px;
+}
+
+a:link{
+  color: rgba(137,132,135,1);
+}
+
+a:hover{
+  color: rgba(137,132,135,1);
+}
+
+a:active{
+  color: blue;
+}
+
+#gardener-img{
+  display: block;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.large-page-img{
+  filter: sepia(30%);
+  opacity: .4;
+  display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+}
+
+.writerpage-text{
+  position: relative;
+}
+
+.page-img-txt{
+
+}
+
+
+.image-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.published-works-grid{
+  padding: 10px;
+}
+
+.interfinity-card{
+  height: 600px;
+  width: 300px;
+  padding: 10px;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(247,242,243,.8);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.vitality-card{
+  height: 600px;
+  width: 300px;
+  padding: 10px;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(247,242,243,.8);
+  transition: 0.3s;
+  text-align: center;
+}
+
+/* On mouse-over, add a deeper shadow */
+.interfinity-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.vitality-card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card-info {
+  background-color: rgba(137,132,135,.50);
+    text-align: center;
+}
+
+.writerpage-text {
+    margin-top: 25px;
+
+    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+        -ms-animation: fadein 5s; /* Internet Explorer */
+         -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.scroll-icon{
+  display: inline-block;
+    width: 100%;
+  text-align: center;
+}
+/* Actor Page */
+
+.actor-slideshow{
+  padding: 20px;
+  width: 100%;
+}
+
+.actor-page{
+  padding: 20px;
+}
+
+.nataliago-text{
+  padding: 30px;
+  font-size: 1.3em;
+  word-wrap: break-word;
+}
+
+/* Actor Page Gallery */
+.actor-gallery{
+  margin: 10px 30px;
+}
+
+.actor-gallery img{
+  width: 300px;
+  padding: 5px;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+.actor-gallery img:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+#photos-inst{
+  -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 5s; /* Firefox < 16 */
+      -ms-animation: fadein 5s; /* Internet Explorer */
+       -o-animation: fadein 5s; /* Opera < 12.1 */
+          animation: fadein 5s;
+}

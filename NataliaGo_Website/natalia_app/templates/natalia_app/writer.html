@@ -1,0 +1,88 @@
+{% extends "natalia_app/base.html" %}
+{% load static %}
+{% block content %}
+{% block additional_styles %}
+
+<style>
+  html {
+  background: url({% static 'media/typewriter2.jpg' %});
+  background-size: cover;
+  background-repeat:no-repeat;
+   }
+</style>
+
+<div class="uk-container uk-container-large writer-page">
+    <h1 class="uk-text-center">The Gardener</h1>
+
+  <div class="writerpage-background">
+
+    <img id="gardener-img" src="{% static 'media/gardener.jpg' %}" alt="" width="200" height="200">
+
+    <div class="writerpage-text uk-text-center">
+      <p>George RR Martin said that there are two types of writers, the architects and the gardeners. Architects are masters of plot. I'm a gardener. I plant a seed and as the plant grows, I water it not knowing how many branches it'll have. I just find out along the way.</p>
+    </div>
+  </div>
+
+    <h1 class="uk-text-center">Works Published</h1>
+    <h2 class="uk-text-center">Short Stories</h2>
+
+    <div class="uk-grid-collapse uk-flex-center uk-text-center published-works-grid uk-container-medium" uk-grid>
+      <div class="interfinity-card" uk-child-width-expand>
+        <a href="https://www.amazon.com/dp/B01N7XUEJ1" target="_blank"><img src="{% static 'media/interfinity.jpg' %}" alt="" style="width=100%"></a>
+      <div class="card-info uk-container-small">
+        <a href="https://www.amazon.com/dp/B01N7XUEJ1" target="_blank"><h3>Interfinity</h3></a>
+        <p>Nancie and Cacey sign up for an underground experiment that involves daring new technology...</p>
+      </div>
+      </div>
+      <div class="vitality-card" uk-child-width-expand>
+        <a href="https://www.amazon.com/dp/B06XC4KWSX" target="_blank"><img src="{% static 'media/vitality.jpg' %}" alt="" style="width=100%"></a>
+      <div class="card-info uk-container-small">
+        <a href="https://www.amazon.com/dp/B06XC4KWSX" target="_blank"><h3>Vitality</h3></a>
+        <p>The gripping sequel to "Interfinity". After coming out of a treacherous ordeal, a lesbian couple...</p>
+      </div>
+      </div>
+
+    </div>
+
+  <br>
+  <br>
+
+  <a class="scroll-icon uk-text-center" href="#writer-section2" uk-scroll><span uk-icon="icon: chevron-down; ratio: 3"></span></a>
+
+  <br>
+  <br>
+  <br>
+
+
+
+  <section id="writer-section2">
+
+
+<br>
+
+  <hr class="uk-divider-icon">
+
+        <div class="uk-container-large writerpage-text">
+          <img class="large-page-img" src="{% static 'media/notebook.jpg' %}" alt="" width="300px" height="300px">
+          <div class="image-text">
+            <p class="page-img-txt uk-text-middle uk-text-justify">
+              There is something incredibly intimidating but at the same time, exhilirating when writing on a blank page.
+              I'm not one of those who write in moments of magic, like those who claim to experience flashes of genius when they create works of art.
+              Every page is definitely a struggle for me. And I strongly believe that the magic is in the hard work that you put in.
+            </p>
+          </div>
+
+
+        <br>
+      </div>
+    </section>
+
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}
+{% endblock %}

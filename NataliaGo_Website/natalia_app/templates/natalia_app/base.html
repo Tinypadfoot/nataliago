@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <title>Natalia Go</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/css/uikit.min.css">
+    <!-- UIkit JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit-icons.min.js"></script>
+    <script src="uikit/dist/js/uikit-icons.min.js"></script>
+    <!-- Medium Editor -->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+    <link rel="stylesheet" href="{% static 'natalia_app.css' %}">
+    <script type="text/javascript" src="{% static 'natalia_app.js' %}"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Lato" rel="stylesheet">
+
+  </head>
+  <body>
+
+<div class="main_navbar">
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
+        <div class="uk-navbar-left main-nav uk-visible@m">
+            <ul class="uk-navbar-nav">
+              <a class="uk-navbar-item uk-logo"  href="{% url 'index' %}">NATALIA</a>
+                <li><a href="{% url 'writer' %}">Writer</a></li>
+                <li><a href="{% url 'actor' %}">Actor</a></li>
+                <li><a href="#">Developer</a></li>
+                <li><a href="#">Social Media Manager</a></li>
+                <li><a href="#">Volunteer Work</a></li>
+                <li>
+                    <a href="">Stories</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="{% url 'post_list' %}">Blog</a></li>
+                            <li><a href="https://www.amazon.com/author/nataliago" target="_blank">Amazon Kindle</a></li>
+                            <li><a href="#">Short Stories</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+
+        </div>
+
+        <div class="uk-navbar-right; uk-hidden@m">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a uk-navbar-toggle-icon href="#"></a>
+                  <div class="uk-navbar-dropdown">
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <a class="uk-navbar-item uk-logo"  href="{% url 'index' %}">NATALIA</a>
+                        <li><a href="{% url 'writer' %}">Writer</a></li>
+                        <li><a href="{% url 'actor' %}">Actor</a></li>
+                        <li><a href="#">Developer</a></li>
+                        <li><a href="#">Social Media Manager</a></li>
+                        <li><a href="#">Volunteer Work</a></li>
+                        <li>
+                            <a href="">Stories</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-active"><a href="{% url 'post_list' %}">Blog</a></li>
+                                    <li><a href="https://www.amazon.com/author/nataliago" target="_blank">Amazon Kindle</a></li>
+                                    <li><a href="#">Short Stories</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                      </ul>
+                  </div>
+              </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+</div>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+          <div class="blog_posts">
+            {% block content %}
+
+            {% endblock %}
+
+          </div>
+
+        </div>
+    </div>
+</div>
+
+  </body>
+</html>

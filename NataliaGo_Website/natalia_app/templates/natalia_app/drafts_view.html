@@ -1,0 +1,18 @@
+{% extends 'natalia_app/base.html' %}
+{% block content %}
+
+<p>
+<a id="bloglink" href="{% url 'post_list' %}"> Back to Blog |</a><a href="{% url 'post_draft_list' %}"> Back to Drafts |</a>
+</p>
+
+{% for post in drafts_view %}
+<div class="uk-container-large">
+  <div class="post">
+    <p class="date">Created: {{post.created_date|date:'d-m-y'}}</p>
+    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+    <p>{{post.text|truncatechars:200}}</p>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "natalia_app/base.html" %}
+{% load static %}
+{% block content %}
+{% block additional_styles %}
+
+<style>
+  html {
+  background: url({% static 'media/gertrude.jpg' %});
+  background-size: cover;
+  background-repeat:no-repeat;
+   }
+</style>
+
+<div class="uk-container-large actor-page">
+
+<h1>Natalia Go</h1>
+
+<div class="uk-container-medium">
+
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+      <div class="actor-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="animation: fade" uk-slideshow="autoplay: true">
+
+       <ul class="uk-slideshow-items">
+           <li>
+               <img src="{% static 'media/headshot1.jpg' %}" alt="" uk-cover>
+           </li>
+           <li>
+               <img src="{% static 'media/headshot2.jpg' %}" alt="" uk-cover>
+           </li>
+           <li>
+               <img src="{% static 'media/headshot3.jpg' %}" alt="" uk-cover>
+           </li>
+       </ul>
+
+       <a class="uk-position-center-left uk-position-small uk-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+       <a class="uk-position-center-right uk-position-small uk-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+      </div>
+
+    </div>
+    <div class="nataliago-text uk-container-medium">
+      <p>I started acting professionally in Philippine theatre in 2012 with a company called Gantimpala Theatre Foundation. From then, I knew that acting was something I wanted to do for the rest of my life. It may not be the only thing I do but I can't imagine myself not doing it.</p>
+      <p>My most favorite character that I played is Queen Gertrude of Hamlet. There is something uniquely exhilirating in doing a Shakespeare play. Something that can't be described by ordinary words, maybe because being in a Shakespeare play means being in a world with a language of its own.</p>
+    </div>
+</div>
+
+   </div>
+
+<br>
+
+<p id="photos-inst" uk-text-muted class="uk-text-center uk-text-large">Hover and click photos to enlarge.</p>
+
+<div class="actor-gallery uk-container-medium" uk-lightbox>
+  <a href="{% static 'media/beki.jpg' %}"
+      data-caption="My Philippine theatre debut as Beki the Cow in Jack and the Beanstalk the Musical.">
+    <img src="{% static 'media/beki_small.jpg' %}" alt=""></a>
+  <a href="{% static 'media/bingo1.jpg' %}"
+      data-caption="Playing Joan in Edward Bond's Bingo, Tales of Money and Death, and Shakespeare by the Improbable Fictions, Tuscaloosa, Alabama.">
+    <img src="{% static 'media/bingo1_small.jpg' %}" alt=""></a>
+  <a href="{% static 'media/gertrude_hamlet.jpg' %}"
+      data-caption="As Queen Gertrude with Hamlet in Shakespeare's Hamlet by Ikarus Collaborative, Philippines.">
+    <img src="{% static 'media/gertrude_hamlet_small.jpg' %}" alt=""></a>
+  <a href="{% static 'media/gertrude.jpg'%}"
+      data-caption="Queen Gertrude in one of the most challenging scenes in Hamlet.">
+    <img src="{% static 'media/gertrude_small.jpg' %}" alt=""></a>
+</div>
+
+<br>
+
+<a class="scroll-icon uk-text-center" href="#actor-section2" uk-scroll><span uk-icon="icon: chevron-down; ratio: 3"></span></a>
+
+<br>
+<br>
+<br>
+
+
+
+<section id="actor-section2">
+
+<br>
+<br>
+<br>
+
+
+
+
+
+</section>
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+{% endblock %}
